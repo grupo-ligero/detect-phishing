@@ -1,5 +1,11 @@
 # Detecção de Phishing com Machine Learning  
-  
+### Integrantes
+Eric Akio Uchiyamada                  RA: 10395287<br/>
+Lucas Goulart de Farias Meres         RA: 10395777<br/>
+Oliver Kieran Galvão McCormack        RA: 10395672<br/>
+Pedro Loureiro Morone Branco Volpe    RA: 10395922<br/>
+Renan Tagliaferro                     RA: 10395211<br/>
+
 # Visão Geral
 
 Este projeto explora a utilização de algoritmos de machine learning para a detecção automatizada de sites de phishing, com base em características extraídas de URLs e conteúdo das páginas. O estudo compara os desempenhos de três algoritmos: Regressão Logística, K-Nearest Neighbors (KNN) e Random Forest, usando um dataset que contém 5.780 amostras, sendo 578 de sites phishing e 5.000 de sites legítimos. 
