@@ -1,11 +1,11 @@
 # Detecção de Phishing com Machine Learning  
 ### Integrantes
-Eric Akio Uchiyamada                  RA: 10395287<br/>
-Lucas Goulart de Farias Meres         RA: 10395777<br/>
-Oliver Kieran Galvão McCormack        RA: 10395672<br/>
-Pedro Loureiro Morone Branco Volpe    RA: 10395922<br/>
-Renan Tagliaferro                     RA: 10395211<br/>
-
+Eric Akio Uchiyamada                  <br/>RA: 10395287<br/><br/>
+Lucas Goulart de Farias Meres         <br/>RA: 10395777<br/><br/>
+Oliver Kieran Galvão McCormack        <br/>RA: 10395672<br/><br/>
+Pedro Loureiro Morone Branco Volpe    <br/>RA: 10395922<br/><br/>
+Renan Tagliaferro                     <br/>RA: 10395211<br/><br/>
+  
 # Visão Geral
 
 Este projeto explora a utilização de algoritmos de machine learning para a detecção automatizada de sites de phishing, com base em características extraídas de URLs e conteúdo das páginas. O estudo compara os desempenhos de três algoritmos: Regressão Logística, K-Nearest Neighbors (KNN) e Random Forest, usando um dataset que contém 5.780 amostras, sendo 578 de sites phishing e 5.000 de sites legítimos. 
@@ -38,28 +38,54 @@ Mais detalhes sobre o projeto estão no artigo "Detecção de Sites Phishing com
 Também disponibilizamos um .ipynb, com os codigos organizados para melhor visualização das informações, sendo uma versão extra sobre os códigos presentes no Docker do projeto.  
 
 # Executar Docker
-## Instale o Docker (se ainda não estiver instalado):
+## Opção 1: Obter imagem pelo Docker Hub
+### a. Instale o Docker (se ainda não estiver instalado):
 Siga as instruções de instalação para o Docker de acordo com o sistema operacional: [Docker](https://www.docker.com/products/docker-desktop/) 
-## Faça login no Docker Hub
+### b. Faça login no Docker Hub
 Abra o terminal e digite:
 ```bash
 docker login
 ``` 
 Insira seu nome de usuário e senha do Docker Hub. Se o contêiner for público, essa etapa pode ser opcional.
-## Baixe a imagem do contêiner do Docker Hub:
+### c. Baixe a imagem do contêiner do Docker Hub:
 ```bash
 docker pull eriaki/detect-phishing:latest
 ```
-## Prepare o arquivo .csv com os dados da predição
+### d. Prepare o arquivo .csv com os dados da predição
 **Atenção**: o arquivo .csv deve ter um formato específico para a predição ser executada normalmente. <br/>
 O arquivo .csv deve ter as colunas: `brands`, `features.html`, `whois_domain_age`, `remote_ip_address`, `domain`, `whois_registrar_url`, `url`, `assets_downloaded` e `is_phishing`. <br/>
 Recomenda-se utilizar um dataset alterado do site do Zenodo (Link: https://zenodo.org/records/8041387).
-## Execute o contêiner
+### e. Execute o contêiner
 ```bash
 docker run -p 8501:8501 eriaki/detect-phishing
 ```
-## Abra localhost no navegador
+### f. Abra localhost no navegador
 Pesquise por http://localhost:8501/ no seu navegador de preferência
-## Insira o arquivo .csv para a previsão
+### g. Insira o arquivo .csv para a previsão
+Um campo para inserir arquivos estará disponível. Insira o arquivo .csv no campo. <br/>
+Com isso, os modelos preverão baseado no arquivo .csv fornecido.
+## Opção 2: Obter imagem pela pasta Docker
+### a. Instale o Docker (se ainda não estiver instalado):
+Siga as instruções de instalação para o Docker de acordo com o sistema operacional: [Docker](https://www.docker.com/products/docker-desktop/) 
+### b. Baixe a pasta Docker presente neste repositório
+### c. Abra o terminal dentro da pasta Docker
+### d. Faça build do Docker
+Antes verifique se o Docker foi isntalado com:
+```bash
+docker --version
+```
+Se ele foi instalado, a versão dele irá aparecer. <br/>
+Depois, faça a build da imagem:
+```bash
+docker build -t streamlit-app .
+```
+Este processo irá demorar um tempo.
+### e. Execute a imagem
+```bash
+docker run -p 8501:8501 streamlit-app
+```
+### f. Abra localhost no navegador
+Pesquise por http://localhost:8501/ no seu navegador de preferência.
+### g. Insira o arquivo .csv para a previsão
 Um campo para inserir arquivos estará disponível. Insira o arquivo .csv no campo. <br/>
 Com isso, os modelos preverão baseado no arquivo .csv fornecido.
