@@ -5,7 +5,8 @@ Lucas Goulart de Farias Meres         <br/>RA: 10395777<br/><br/>
 Oliver Kieran Galvão McCormack        <br/>RA: 10395672<br/><br/>
 Pedro Loureiro Morone Branco Volpe    <br/>RA: 10395922<br/><br/>
 Renan Tagliaferro                     <br/>RA: 10395211<br/><br/>
-  
+### Vídeo do projeto
+[Youtube](https://youtu.be/zOmv9MB8YWw )
 # Visão Geral
 
 Este projeto explora a utilização de algoritmos de machine learning para a detecção automatizada de sites de phishing, com base em características extraídas de URLs e conteúdo das páginas. O estudo compara os desempenhos de três algoritmos: Regressão Logística, K-Nearest Neighbors (KNN) e Random Forest, usando um dataset que contém 5.780 amostras, sendo 578 de sites phishing e 5.000 de sites legítimos. 
